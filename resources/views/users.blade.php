@@ -62,7 +62,7 @@
     var lastIndex = 0;
 
     // Get Data
-    firebase.database().ref('customers/').on('value', function (snapshot) {
+    firebase.database().ref('users/').on('value', function (snapshot) {
     var value = snapshot.val();
     var htmls = [];
     $.each(value, function (index, value) {
@@ -87,7 +87,7 @@
 
     console.log(values);
 
-    firebase.database().ref('customers/' + userID).set({
+    firebase.database().ref('users/' + userID).set({
         name: name,
         email: email,
     });
