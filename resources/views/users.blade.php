@@ -33,6 +33,19 @@
                 </form>
             </div>
         </div>
+    
+        <br>
+    
+        <h5># Customers</h5>
+        <table class="table table-bordered">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+            <tbody id="tbody">
+    
+            </tbody>
+        </table>
     </div>
 
     <script>
@@ -47,6 +60,23 @@
     var database = firebase.database();
 
     var lastIndex = 0;
+
+    // Get Data
+    firebase.database().ref('customers/').on('value', function (snapshot) {
+    var value = snapshot.val();
+    var htmls = [];
+    $.each(value, function (index, value) {
+        if (value) {
+            htmls.push('<tr>\
+            <td>' + value.name + '</td>\
+            <td>' + value.email + '</td>\
+        </tr>');
+        }
+        lastIndex = index;
+    });
+    $('#tbody').html(htmls);
+    $("#submitUser").removeClass('desabled');
+});
     
     // Add Data
     $('#submitCustomer').on('click', function () {
