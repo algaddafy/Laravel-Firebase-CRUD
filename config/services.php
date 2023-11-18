@@ -31,14 +31,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
     'firebase' => [
-            'apiKey'=> "AIzaSyDgrcPK_yUxVI8VoWOUjpPwT7MjGxmjg-w",
-            'authDomain' => "crud-a4986.firebaseapp.com",
-            'database_url' => "https://crud-a4986-default-rtdb.firebaseio.com/",
-            'projectId'=> "crud-a4986",
-            'storageBucket'=> "crud-a4986.appspot.com",
-            'messagingSenderId'=> "257785480527",
-            'appId'=> "1:257785480527:web:26234b9a9f663407f7313a",
-            'measurementId'=> "G-SVMZ1WBHP4"
+        'api_key' => 'AIzaSyDgrcPK_yUxVI8VoWOUjpPwT7MjGxmjg-w', // Only used for JS integration
+        'auth_domain' => 'crud-a4986.firebaseapp.com', // Only used for JS integration
+        'database_url' => 'https://crud-a4986-default-rtdb.firebaseio.com',
+        'storage_bucket' => 'crud-a4986.appspot.com', // Only used for JS integration
     ],
 
 ];
